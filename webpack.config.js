@@ -46,12 +46,14 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
-      name: "dog_detail",
+      name: "dogDetail",
       filename: "remoteEntry.js",
       remotes: {
         home: 'home@http://localhost:8080/remoteEntry.js'
       },
-      exposes: {},
+      exposes: {
+        './Carousel': './src/Carousel.vue',
+      },
       shared: require("./package.json").dependencies,
     }),
     new HtmlWebPackPlugin({
