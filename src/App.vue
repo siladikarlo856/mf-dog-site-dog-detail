@@ -25,6 +25,7 @@
 
 <template>
 <div class="container">
+  <Header />
   <div class="detail">
     <img src="https://placedog.net/500/280?id=40" />
     <div>
@@ -50,3 +51,13 @@
   </div>
 </div>
 </template>
+
+<script>
+  import Header from 'home/Header';
+
+  export default {
+    components: {
+      Header,
+    }
+  }
+</script>

@@ -48,7 +48,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "dog_detail",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        home: 'home@http://localhost:8080/remoteEntry.js'
+      },
       exposes: {},
       shared: require("./package.json").dependencies,
     }),
